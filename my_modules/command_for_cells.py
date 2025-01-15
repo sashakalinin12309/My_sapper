@@ -215,7 +215,7 @@ def command_for_cell_rmb(btn: tk.Button, button_with_counter_flags: tk.Button, d
 
             if flags_counter != 0:  # Можно добавлять флажки на поле, если их кол-во не равняется нулю (они есть).
 
-                img = tk.PhotoImage(file=f"image\\for_use_in_game\\flags\\{work_with_file.information_in_Information()["Цвет_флага"]}_flags.png")  # Создаем переменную с изображением флажка.
+                img = tk.PhotoImage(file=f"image//for_use_in_game//flags//{work_with_file.information_in_Information()["Цвет_флага"]}_flags.png")  # Создаем переменную с изображением флажка.
                 btn.config(text="", image=img, compound=tk.BOTTOM, width=18, height=20)  # Добавляем изображение на кнопку-ячейку.
                 btn.image = img  # Сохраняем ссылку на изображение для кнопки (так надо).
 

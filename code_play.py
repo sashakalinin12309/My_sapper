@@ -35,36 +35,36 @@ change_the_size(window, size)  # Изменение основоного окн�
 
 # Словарь с изображениями флажков.
 images_flags = {
-    "aqua": tk.PhotoImage(file="image\\for_use_in_game\\flags\\aqua_flags.png"), 
-    "blue": tk.PhotoImage(file="image\\for_use_in_game\\flags\\blue_flags.png"),
-    "green": tk.PhotoImage(file="image\\for_use_in_game\\flags\\green_flags.png"),
-    "orange": tk.PhotoImage(file="image\\for_use_in_game\\flags\\orange_flags.png"),
-    "pink": tk.PhotoImage(file="image\\for_use_in_game\\flags\\pink_flags.png"),
-    "violet": tk.PhotoImage(file="image\\for_use_in_game\\flags\\violet_flags.png"),
-    "yellow": tk.PhotoImage(file="image\\for_use_in_game\\flags\\yellow_flags.png"),
-    "red": tk.PhotoImage(file="image\\for_use_in_game\\flags\\red_flags.png")
+    "aqua": tk.PhotoImage(file="image//for_use_in_game//flags//aqua_flags.png"), 
+    "blue": tk.PhotoImage(file="image//for_use_in_game//flags//blue_flags.png"),
+    "green": tk.PhotoImage(file="image//for_use_in_game//flags//green_flags.png"),
+    "orange": tk.PhotoImage(file="image//for_use_in_game//flags//orange_flags.png"),
+    "pink": tk.PhotoImage(file="image//for_use_in_game//flags//pink_flags.png"),
+    "violet": tk.PhotoImage(file="image//for_use_in_game//flags//violet_flags.png"),
+    "yellow": tk.PhotoImage(file="image//for_use_in_game//flags//yellow_flags.png"),
+    "red": tk.PhotoImage(file="image//for_use_in_game//flags//red_flags.png")
 }
 
 # Словарь с изображениями цветов в виде кружков.
 interface_colors = {
-    'red': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\red_color.png'), 
-    'orange': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\orange_color.png'), 
-    'yellow': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\yellow_color.png'), 
-    'lightgreen': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\lightgreen_color.png'), 
-    'green': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\green_color.png'), 
-    'aqua': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\aqua_color.png'),  
-    'blue': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\blue_color.png'), 
-    'violet': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\violet_color.png'), 
-    'darkviolet': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\darkviolet_color.png'), 
-    'pink': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\pink_color.png'),
-    'lightgrey': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\lightgrey_color.png'),
-    'grey': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\grey_color.png'),
-    'white': tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\white_color.png'),
-    "random": tk.PhotoImage(file='image\\for_use_in_game\\interface_colors\\random_color.png')
+    'red': tk.PhotoImage(file='image//for_use_in_game//interface_colors//red_color.png'), 
+    'orange': tk.PhotoImage(file='image//for_use_in_game//interface_colors//orange_color.png'), 
+    'yellow': tk.PhotoImage(file='image//for_use_in_game//interface_colors//yellow_color.png'), 
+    'lightgreen': tk.PhotoImage(file='image//for_use_in_game//interface_colors//lightgreen_color.png'), 
+    'green': tk.PhotoImage(file='image//for_use_in_game//interface_colors//green_color.png'), 
+    'aqua': tk.PhotoImage(file='image//for_use_in_game//interface_colors//aqua_color.png'),  
+    'blue': tk.PhotoImage(file='image//for_use_in_game//interface_colors//blue_color.png'), 
+    'violet': tk.PhotoImage(file='image//for_use_in_game//interface_colors//violet_color.png'), 
+    'darkviolet': tk.PhotoImage(file='image//for_use_in_game//interface_colors//darkviolet_color.png'), 
+    'pink': tk.PhotoImage(file='image//for_use_in_game//interface_colors//pink_color.png'),
+    'lightgrey': tk.PhotoImage(file='image//for_use_in_game//interface_colors//lightgrey_color.png'),
+    'grey': tk.PhotoImage(file='image//for_use_in_game//interface_colors//grey_color.png'),
+    'white': tk.PhotoImage(file='image//for_use_in_game//interface_colors//white_color.png'),
+    "random": tk.PhotoImage(file='image//for_use_in_game//interface_colors//random_color.png')
 }
 
 # Создадим изображение монеты для использования его в текстовом виджете.
-money_currency = tk.PhotoImage(file='image\\for_use_in_game\\sapper`s_currency.png')
+money_currency = tk.PhotoImage(file='image//for_use_in_game//sapper`s_currency.png')
 money_currency = money_currency.subsample(12, 12)
 
 matrix = minefield.create_minefield(size)  # Создадим матрицу, значения которой будут лежать в основе игрового поля.

@@ -29,7 +29,7 @@ def create_root(color_for_root) -> tk.Tk:
     root = tk.Tk()  # Создаем главное окно.
     root.geometry('300x400')  # Определяем его размер.
     root.title("Сапёр")  # Даем ему название.
-    root.iconbitmap("image\\icon\\icon_for_application.ico")  # Устанавливаем ему иконку.
+    root.iconbitmap("image//icon//icon_for_application.ico")  # Устанавливаем ему иконку.
     root['bg'] = color_for_root  # Придаем ему цвет, который был при прошлом выходе.
     root.resizable(False, False)  # Запрещаем менять размер.
     
@@ -144,7 +144,7 @@ def close_root(root: tk.Tk, stop_running_process) -> None:
         stop_running_process()  # Останавливаем основной цикл игры.
 
         try:
-            shutil.rmtree('my_modules\\__pycache__')  # Удаляем кэш.
+            shutil.rmtree('my_modules//__pycache__')  # Удаляем кэш.
         except FileNotFoundError:
             pass  # Если папки с кэшом нет.
 

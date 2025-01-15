@@ -3,7 +3,7 @@ def create_Information_about_shop() -> None:
     """Функция создает первоначальный документ Information_about_shop.txt"""
 
     # Открываем/создаем нужный нам файл.
-    with open("data_about_player\\Information_about_shop.txt", "w", encoding="UTF-8") as file:
+    with open("data_about_player//Information_about_shop.txt", "w", encoding="UTF-8") as file:
 
         # Все возможные цвета, которые предусмотрены в магазине.
         text = (
@@ -53,7 +53,7 @@ def create_Information() -> None:
     """Функция создает первоначальный документ Information.txt"""
 
     # Открываем/создаем нужный нам файл.
-    with open("data_about_player\\Information.txt", "w", encoding="UTF-8") as Information:
+    with open("data_about_player//Information.txt", "w", encoding="UTF-8") as Information:
         
         # Решил, что удобнее записать впринципе уже готовый шаблон,
         # т. к. не вижу здесь какой-либо закономерности. 
@@ -73,6 +73,6 @@ def create_Collection_player() -> None:
     P. S. Он должен быть пустым..."""
 
     # Конечно. открываем файл, но...
-    with open("data_about_player\\Collection_player.txt", "w", encoding="UTF-8") as collection_player:
+    with open("data_about_player//Collection_player.txt", "w", encoding="UTF-8") as collection_player:
 
         ...  # ... но, по задумке, он должен быть пустой.

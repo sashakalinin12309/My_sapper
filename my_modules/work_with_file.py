@@ -19,7 +19,7 @@ def information_in_Information_about_shop() -> dict:
     try:
         
         # Открываем файл Information_about_shop.txt.
-        with open("data_about_player\\Information_about_shop.txt", "r", encoding="UTF-8") as information_about_shop:
+        with open("data_about_player//Information_about_shop.txt", "r", encoding="UTF-8") as information_about_shop:
 
             # Собираем всю информацию из файла в виде словаря
             # {цвет: {окно:0/1, поле:0/1, ячейки:0/1, флажки:0/1}};
@@ -34,7 +34,7 @@ def information_in_Information_about_shop() -> dict:
         messagebox.showerror(title="Ошибка!", message="Файл с твоими цветами для игры почему-то не найден...\nПоэтому все заново!")
 
         # Однако, всё же открываем файл.
-        with open("data_about_player\\Information_about_shop.txt", "r", encoding="UTF-8") as information_about_shop:
+        with open("data_about_player//Information_about_shop.txt", "r", encoding="UTF-8") as information_about_shop:
 
             # Забираем всю информацию.
             information = {element_shop[0]: {place[0]: place[1] for place in map(lambda x: x.split(":"), element_shop[1:])} for element_shop in map(lambda x: x.split(), information_about_shop.readlines())}
@@ -57,7 +57,7 @@ def information_in_Information() -> dict:
     try:
         
         # Открываем файл Information.txt.
-        with open("data_about_player\\Information.txt", "r", encoding="UTF-8") as information:
+        with open("data_about_player//Information.txt", "r", encoding="UTF-8") as information:
 
             # Собираем всю информацию в словарь.
             information_about_game = {value[0]: value[1] for value in list(map(lambda x: x.strip("\n").split(":"), information.readlines())) if value != " "}
@@ -70,7 +70,7 @@ def information_in_Information() -> dict:
         messagebox.showerror(title="Ошибка!", message="Файл с твоей информацией в игре почему-то не найден...\nПоэтому все заново!")
 
         # Открываем уже созданный файл.
-        with open("data_about_player\\Information.txt", "r", encoding="UTF-8") as information_about_shop:
+        with open("data_about_player//Information.txt", "r", encoding="UTF-8") as information_about_shop:
 
             # Собираем всю информацию.
             information = {element_shop[0]: {place[0]: place[1] for place in map(lambda x: x.split(":"), element_shop[1:])} for element_shop in map(lambda x: x.split(), information_about_shop.readlines())}
@@ -97,7 +97,7 @@ def replace_in_the_Information(*element_and_replacement: list) -> dict:
     try:
 
         # Открываем файл Information.txt
-        with open("data_about_player\\Information.txt", 'r', encoding="UTF-8") as information:
+        with open("data_about_player//Information.txt", 'r', encoding="UTF-8") as information:
             
             # записываем информацию в словарь.
             information_about_game = {value[0]: value[1] for value in list(map(lambda x: x.strip("\n").split(":"), information.readlines())) if value != " "}
@@ -110,7 +110,7 @@ def replace_in_the_Information(*element_and_replacement: list) -> dict:
         messagebox.showerror(title="Ошибка", message="Почему-то файл с твоей информацией не найден...\nВидимо, все сначала!")
 
         # Открываем нужный файл.
-        with open("data_about_player\\Information.txt", 'r', encoding="UTF-8") as information:
+        with open("data_about_player//Information.txt", 'r', encoding="UTF-8") as information:
             
             # Записываем всю информацию в словарь.
             information_about_game = {value[0]: value[1] for value in list(map(lambda x: x.strip("\n").split(":"), information.readlines())) if value != " "}
@@ -137,7 +137,7 @@ def write_document_Information(dict_with_information: dict) -> None:
     # Открываем файл Information.txt в режиме записи (всё содержимое стёрто).
     # Файл в любом случае будет обнаружен, т. к. такой режим позволяет его 
     # создать при отсутствии. 
-    with open("data_about_player\\Information.txt", 'w', encoding="UTF-8") as information:
+    with open("data_about_player//Information.txt", 'w', encoding="UTF-8") as information:
 
         # Производим запись в файл содержимое переданного в параметре словаря.
         for element in dict_with_information:
@@ -159,7 +159,7 @@ def write_document_Information_about_shop(dict_with_colors: dict) -> None:
     # Открываем файл Information_about_shop.txt в режиме перезаписи.
     # Файл в любом случае будет обнаружен, т. к. такой режим позволяет его 
     # создать при отсутствии.
-    with open("data_about_player\\Information_about_shop.txt", "w", encoding="UTF-8") as information_about_shop:
+    with open("data_about_player//Information_about_shop.txt", "w", encoding="UTF-8") as information_about_shop:
         
         # Произвдим запись.
         for element in dict_with_colors:  # Перебираем все цвета.
@@ -180,7 +180,7 @@ def information_in_Collection_player() -> dict:
     try:  # Исключение вызывается, если файл отсутствует.
 
         # Открываем файл collection_player.txt
-        with open("data_about_player\\Collection_player.txt", "r", encoding="UTF-8") as collection_player:
+        with open("data_about_player//Collection_player.txt", "r", encoding="UTF-8") as collection_player:
             
             # Записываем всю информацию в словарь типа
             # {название_коллекции: {окно:цвет, поле:цвет, ячейки:цвет. флажки:цвет}} 
@@ -195,7 +195,7 @@ def information_in_Collection_player() -> dict:
         messagebox.showerror(title="Ошибка!", message="Файл с твоими коллекциями для игры почему-то не найден...\nПоэтому все заново!")
 
         # Открываем уже созданный файл.
-        with open("data_about_player\\Collection_player.txt", "r", encoding="UTF-8") as collection_player:
+        with open("data_about_player//Collection_player.txt", "r", encoding="UTF-8") as collection_player:
 
             # Записываем всю информацию в словарь типа
             # {название_коллекции: {окно:цвет, поле:цвет, ячейки:цвет. флажки:цвет}} 
@@ -215,7 +215,7 @@ def write_document_Collection_player(dict_with_text) -> None:
     # Открываем файл .txt в режиме перезаписи.
     # Файл в любом случае будет обнаружен, т. к. такой режим позволяет его 
     # создать при отсутствии.
-    with open("data_about_player\\Collection_player.txt", "w", encoding="UTF-8") as collection_player:
+    with open("data_about_player//Collection_player.txt", "w", encoding="UTF-8") as collection_player:
         
         for name_collection in dict_with_text:  # Перебираем все названия коллекций.
             print(name_collection, file=collection_player, end=" ")  # Записываем выбранную коллекцию.
