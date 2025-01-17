@@ -75,11 +75,11 @@ money.pack(anchor=tk.NE)
 
 # Создадим кнопку, текст которой будет отображать значение таймера.
 # По сути это - кнопка-таймер.
-btn_timer = tk.Button(window, text=0, bg="black", fg="red", width=10, activebackground="black", activeforeground="red")
+btn_timer = tk.Button(window, text=0, font="TkDefaultFont", bg="black", fg="red", width=10, activebackground="black", activeforeground="red")
 btn_timer.place(x=25, y=50)
 
 # Создадим кнопку, текст которой будет отображать кол-во оставшихся флажков.
-btn_flags = tk.Button(text=counter_flags(size), bg="black", fg="red", width=10, activebackground="black", activeforeground="red")
+btn_flags = tk.Button(text=counter_flags(size), font="TkDefaultFont", bg="black", fg="red", width=10, activebackground="black", activeforeground="red")
 btn_flags.place(x=195, y=50)
 
 # Почему я использовал кнопки, а не текстовые виджеты?
@@ -98,8 +98,6 @@ interface.restart(window, partial(function_restart.restart_game, window, btn_fla
 # - выбирать цвета доля окна, поля, ячеек, флажков и создавать коллекции.
 game_menu = create_menu(window, money, btn_flags, btn_timer, images_flags, interface_colors)
 window["menu"] = game_menu
-
-end = time()
 
 running = True  # Переменная, отвечающая за основной цикл приложения.
 
@@ -120,8 +118,11 @@ while running:
     # выйдет из приложения во время активной игры.
     try:
         process_timer(btn_timer)  # Запуск таймера
-    except:
+    except tk.TclError:  
         ...
+        # Объяснение ошибки:
+        # когда игрок выключает игру активной, то функция таймера работает,
+        # и не видит кнопку таймера, из-за чего и возращется ошибка.  
 
     btn_timer.update()  # Обновляем кнопку-таймер, т. к. изменяем её текст.
 

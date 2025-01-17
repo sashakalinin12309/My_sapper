@@ -3,7 +3,6 @@ import tkinter as tk
 from tkinter import messagebox
 from functools import partial
 from random import choice
-import shutil
 
 import my_modules.command_for_cells as command_for_cells
 
@@ -29,13 +28,16 @@ def create_root(color_for_root) -> tk.Tk:
     root = tk.Tk()  # Создаем главное окно.
     root.geometry('300x400')  # Определяем его размер.
     root.title("Сапёр")  # Даем ему название.
-    root.iconbitmap("image//icon//icon_for_application.ico")  # Устанавливаем ему иконку.
+    try:
+        root.iconbitmap("image//icon//icon_for_application.ico")  # Устанавливаем ему иконку.
+    except FileNotFoundError:
+        pass
     root['bg'] = color_for_root  # Придаем ему цвет, который был при прошлом выходе.
     root.resizable(False, False)  # Запрещаем менять размер.
     
     return root  # В итоге возращаем окно.
 
-def create_field(color_for_field: str, color_for_cell: str, money_counter: tk.Label, matrix: tuple, btn_flags: tk.Button, timer: tk.Button, color_for_number: str="black") -> tk.Canvas:
+def create_field(color_for_field: str, color_for_cell: str, money_counter: tk.Label, matrix: list, btn_flags: tk.Button, timer: tk.Button, color_for_number: str="black") -> tk.Canvas:
 
     """
     Создает игровое поле с ячейками для ходов.
@@ -88,7 +90,7 @@ def create_field(color_for_field: str, color_for_cell: str, money_counter: tk.La
             # Выбор цвета для кнопок (может попасться цвет random).
             final_color_for_cell = color_for_cell if color_for_cell != "random" else choice(("aqua", "blue", "darkviolet", "green", "grey", "lightgreen", "lightgrey", "orange", "pink", "red", "violet", "yellow", "white"))
             
-            cell = tk.Button(field, bg=final_color_for_cell, width=2, activebackground=final_color_for_cell)  # Создание ячейки.
+            cell = tk.Button(field, font="TkDefaultFont", bg=final_color_for_cell, width=2, activebackground=final_color_for_cell)  # Создание ячейки.
         
             coordinates_button[(i, j)] = (cell, matrix[i][j], [color_for_cell])  # Добавляем информацю о ячейке в словарь.
             criterion_for_win.append((i, j))  # Передаем координаты ячейки в список для проверки на победу.
@@ -118,7 +120,7 @@ def restart(root: tk.Tk, command_for_restart) -> None:
     """
 
     # Создаем кнопку для перезапуска игры.
-    restart_button = tk.Button(root, text="⟳", fg="red", width=2, command=command_for_restart)
+    restart_button = tk.Button(root, text="⟳", font="TkDefaultFont", fg="red", width=2, command=command_for_restart)
     restart_button.place(x=140, y=50)
 
 def close_root(root: tk.Tk, stop_running_process) -> None:
@@ -143,9 +145,3 @@ def close_root(root: tk.Tk, stop_running_process) -> None:
         
         stop_running_process()  # Останавливаем основной цикл игры.
 
-        try:
-            shutil.rmtree('my_modules//__pycache__')  # Удаляем кэш.
-        except FileNotFoundError:
-            pass  # Если папки с кэшом нет.
-
-        

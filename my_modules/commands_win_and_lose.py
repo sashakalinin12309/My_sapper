@@ -37,7 +37,7 @@ def neighbours_cells(coordinates: tuple, matrix: dict) -> list:
     return neighbors_buttons_in_list  # Возращаем список с координатами.
 
 # Функция, активация которой запланирована при проигрыше пользователя.
-def lose(coordinates_bombs: tuple, all_buttons: dict, field: tk.Canvas, money: tk.Label) -> None:
+def lose(coordinates_bombs: list, all_buttons: dict, field: tk.Canvas, money: tk.Label) -> None:
 
     """
     Функция активируется, если пользователь проиграл (нажал на ячейку с миной).
